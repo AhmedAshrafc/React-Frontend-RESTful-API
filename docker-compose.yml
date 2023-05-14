@@ -1,0 +1,16 @@
+version: "3"
+services:
+  frontend:
+    build: .
+    command: npm run start
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+  backend:
+    build: .
+    command: npm run dev
+    restart: always
+    ports:
+      - "5000:5000"
